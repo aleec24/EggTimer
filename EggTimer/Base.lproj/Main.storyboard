@@ -170,6 +170,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mh6-xP-8Ae" secondAttribute="bottom" id="s7o-XI-M41"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="AVS-vc-gLU" id="lnx-3J-RCC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
