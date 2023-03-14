@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -16,6 +17,7 @@ class ViewController: UIViewController {
     var timer = Timer()
     var totalTime = 0
     var secondsPassed = 0
+    var player: AVAudioPlayer?
     
     @IBAction func hardnessSelectors(_ sender: UIButton) {
         
@@ -38,12 +40,34 @@ class ViewController: UIViewController {
   
             } else {
                 timer.invalidate()
+                playSound()
                 self.titleLabel.text = "DONE!"
             }
         }
         
     
-    
+    func playSound() {
+        
+        //Look in project disk the indicated resource
+        guard let url = Bundle.main.url(forResource: "Sounds/alarm_sound)", withExtension: "mp3") else { return }
+        
+        do {
+            //even if the mobile is in "Sound Off" Mode, it will execute the sound
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            // Player variable find the sound by URL
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            guard let player = player else { return }
+            
+            //Plays the sound
+            player.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
