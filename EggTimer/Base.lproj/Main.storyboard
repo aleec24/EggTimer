@@ -166,7 +166,6 @@
                                                 <color key="trackTintColor" systemColor="systemGrayColor"/>
                                             </progressView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="GJa-zL-fWc" firstAttribute="leading" secondItem="c4o-32-5YX" secondAttribute="leading" id="NzX-MC-Nhg"/>
                                             <constraint firstAttribute="trailing" secondItem="GJa-zL-fWc" secondAttribute="trailing" id="OTW-Gf-vwt"/>
@@ -199,9 +198,6 @@
         <image name="Egg1" width="640" height="640"/>
         <image name="Egg2" width="640" height="640"/>
         <image name="Egg3" width="640" height="640"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
