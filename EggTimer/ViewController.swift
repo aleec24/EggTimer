@@ -12,8 +12,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var titleLabel: UILabel!
-
-    let eggTimes = ["Soft": 5, "Medium": 7, "Hard": 12]
+    
+    let eggTimes = ["Soft": 300, "Medium": 420, "Hard": 720]
     var timer = Timer()
     var totalTime = 0
     var secondsPassed = 0
@@ -34,22 +34,22 @@ class ViewController: UIViewController {
     
     
     @objc func updateTimer(){
-            if secondsPassed < totalTime {
-                secondsPassed += 1
-                progressBar.progress = Float(secondsPassed) / Float(totalTime)
-  
-            } else {
-                timer.invalidate()
-                playSound()
-                self.titleLabel.text = "DONE!"
-            }
+        if secondsPassed < totalTime {
+            secondsPassed += 1
+            progressBar.progress = Float(secondsPassed) / Float(totalTime)
+            
+        } else {
+            timer.invalidate()
+            self.playSound(soundName:"alarm_sound")
+            self.titleLabel.text = "DONE!"
         }
-        
+    }
     
-    func playSound() {
+    
+    func playSound(soundName: String) {
         
         //Look in project disk the indicated resource
-        guard let url = Bundle.main.url(forResource: "Sounds/alarm_sound)", withExtension: "mp3") else { return }
+        guard let url = Bundle.main.url(forResource: "Sounds/\(soundName)", withExtension: "mp3") else { return }
         
         do {
             //even if the mobile is in "Sound Off" Mode, it will execute the sound
