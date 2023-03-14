@@ -156,7 +156,22 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4o-32-5YX" userLabel="Timer View">
                                         <rect key="frame" x="0.0" y="532.66666666666663" width="361" height="226.33333333333337"/>
+                                        <subviews>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GJa-zL-fWc">
+                                                <rect key="frame" x="0.0" y="110.66666666666674" width="361" height="6"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="5" id="J6b-aR-V1j"/>
+                                                </constraints>
+                                                <color key="progressTintColor" systemColor="systemYellowColor"/>
+                                                <color key="trackTintColor" systemColor="systemGrayColor"/>
+                                            </progressView>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="GJa-zL-fWc" firstAttribute="leading" secondItem="c4o-32-5YX" secondAttribute="leading" id="NzX-MC-Nhg"/>
+                                            <constraint firstAttribute="trailing" secondItem="GJa-zL-fWc" secondAttribute="trailing" id="OTW-Gf-vwt"/>
+                                            <constraint firstItem="GJa-zL-fWc" firstAttribute="centerY" secondItem="c4o-32-5YX" secondAttribute="centerY" id="jod-lU-zoX"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -171,6 +186,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="progressBar" destination="GJa-zL-fWc" id="Ofw-KJ-IMt"/>
                         <outlet property="titleLabel" destination="AVS-vc-gLU" id="lnx-3J-RCC"/>
                     </connections>
                 </viewController>
@@ -188,6 +204,12 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
